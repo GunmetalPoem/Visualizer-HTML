@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Visualize</title>
+    <link rel="icon" type="image/x-icon" href="color-palette.jpg">
+
+ 
+    <style>
+      /* FONTS */
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+
+    </style>
+  </head>
+  <style>
+
+
+
+::-webkit-scrollbar {
+  width: 10px;
+
+  
+}
+
+::-webkit-scrollbar-track {
+  background: #212525;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 1cm;
+}
+
+html {
+    scroll-behavior:smooth;
+   }
+
+#hero{
+
+  position: absolute;
+  left: -10%;
+  z-index: -2;
+  top:-30% ;
+}
+
+#herotext {
+  font-family: 'Lexend', sans-serif;
+  font-weight: 400;
+  position: fixed;
+  font-size: 15px;
+  top: 48%;
+  right: 58%;
+  line-height: 170%;
+  z-index: 200;
+  width: 28%;
+  color: #747373;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  position: fixed;
+  font-size: 100px;
+  top: 25%;
+  right: 53%;
+  z-index: 200;
+  width: 15cm;
+  font-size: 80px;
+  line-height: 110%;
+  /* #fc8b65 */
+}
+
+/* BUTTONS BEGINNING */
+.nav{
+  color: #fc8b65 ;
+  font-size: 13px;
+  font-family: 'Lexend', sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav:hover{
+color: #555555;
+}
+
+.btn{
+font-size: 13px;
+}
+
+#signupbutton{
+  color: #fc8b65;
+  border: 1.5px solid #fc8b65;
+}
+
+#signupbutton:hover{
+  background: #fc8b65;
+  color: #ffffff;
+}
+
+#hookbutton{
+  font-family: 'Lexend', sans-serif;
+  position: fixed;
+  font-size: 15px;
+  top: 70%;
+  left: 14%;
+  z-index: 200;
+  color: #184e8a;
+}
+
+#hookbutton2{
+  font-family: 'Lexend', sans-serif;
+  position: fixed;
+  font-size: 15px;
+  top: 70%;
+  left: 22%;
+  z-index: 200;
+color: #184e8a;
+}
+
+#hookbutton, #hookbutton2 {
+  border: 1.5px solid #184e8a;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+#hookbutton:hover {
+  color: #ffffff;
+  background: #184e8a;
+  border: 1.5px solid #ffffff;
+}
+
+#hookbutton2:hover {
+  color: #ffffff;
+  background: #184e8a;
+  border: 1.5px solid #ffffff;
+}
+/* BUTTONS ENDING */
+
+#logotitle{
+  color: #555555;
+  left: 3.3%;
+  top: 3.5%;
+  font-family: 'Silkscreen', cursive;
+}
+
+#columnizer{
+  display: flex;
+  width: 180%;
+  margin: 7%;
+ 
+}
+
+.text-container{
+  width: 80%;
+margin-left:-.5%;
+ padding-top: 1%;
+ padding-bottom: 3%;
+
+  backdrop-filter: blur(0px);
+}
+
+
+#infotext2{
+  text-align:left;
+ margin-left: 33%;
+ margin-top: 3%;
+  font-size: 17px ;
+  font-weight:400;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 400;
+  line-height: 200%;
+  color: #747373;
+}
+
+
+#titleqr {
+ margin-left: 50%;
+    
+  color: #fc8b65;
+  font-size: 50px;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+#qr{
+margin-left: 54%;
+  width: 30%;
+  justify-content : center;
+  margin-bottom:0;
+}
+
+html { 
+  scroll-behavior: smooth;
+} 
+
+#info{
+background: #2c2c32;
+}
+
+
+
+
+h1{
+    color:#fc8b65 ;
+}
+
+
+
+
+  </style>
+  <body>
+    <div class="wrapper">
+      <div class="parallax__group hero-container">
+        <div class="parallax__layer hero-text">
+          <div class="parallax__group hero-container"></div>
+          <div class="parallax__group info-container"></div>
+          <img id="icon" src="img/color-palette.png" alt="icon" width="32" height="32" style="position: absolute; z-index: -1; top: 3%;left: 1%;" >
+          <a href="index.html"><h2 id="logotitle">VISUALIZE</h2></a>
+          
+          <ul>
+            <li><a class="nav" href="index.html">Home</a></li>
+            <li><a class="nav" href="visualize.html">Visualizer</a></li>
+            <li><a class="nav" href="#">About</a></li>
+            
+   
+          </ul>
+          <h1>Visualize <strong style="color: #3faf9c;">Your HTML</strong></h1>
+          
+          <p id="herotext">Experience the art of web development like never before with our revolutionary HTML visualization website. 
+            Transform your code into captivating visuals and make it easier to know where your tags and elements are! 
+            Whether you're a beginner or an expert, enhance your coding experience and create visually stunning websites. 
+            Visualizer will streamline the build process. </p>
+
+          
+          <a href="signup.php" id="hookbutton" class="btn">Start Here</a>
+          <a href="#info" id="hookbutton2" class="btn">Mobile Version</a>
+    
+          <div class="year-container">
+         
+            
+      
+            <img id="hero" src="hero.jpg" alt="Town" width="1003" height="752" >
+          
+
+          </div>
+          <div class="social-container">
+            <a href="https://www.linkedin.com/in/neshanth-anand/" target="_blank"
+              ><i class="icon ion-logo-linkedin"></i
+            ></a>
+            <a href="https://github.com/GunmetalPoem" target="_blank"
+              ><i class="icon ion-logo-github"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      
+      <div id="info" class="parallax__group info-container" >
+        
+        
+
+
+        <div id="columnizer">
+
+        <!-- <img src="./img/concert.jpg" alt="Lively and colourful concert" /> -->
+     
+
+        <div class="text-container">
+        <h2 id="titleqr">Scan the QR Code</h2>
+          <!-- <video autoplay muted loop id="myVideo">
+            <source id="box" src="img/printor.mp4" type="video/mp4">
+          </video> -->
+         
+          <img id="qr" src="./img/Screenshot 2023-06-17 115929.png" alt="3d printer" />
+          <p id="infotext2"><i>Scan the QR code and be instantly directed to our web-based app on your phone. 
+            To install Visualizer as an app, simply click the settings in the top corner. Get ready to enjoy a seamless and immersive experience!</i>
+          </p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>

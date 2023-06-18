@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+      
+    <link rel="icon" type="image/x-icon" href="color-palette.jpg">
+    <title>HTML Code Visualizer</title>
+    
+    <script>
+        const usedColors = new Set();
+
+        function getRandomColor() {
+            const availableColors = [
+                'red', 'blue', 'green', 'orange', 'purple', 'cyan', 'magenta', 'lime', 'pink', 'teal', 'navy', 'maroon'
+            ];
+            
+            let randomColor;
+            do {
+                randomColor = availableColors[Math.floor(Math.random() * availableColors.length)];
+            } while (usedColors.has(randomColor));
+            
+            usedColors.add(randomColor);
+            
+            return randomColor;
+        }
+        
+        function visualizeHTML() {
+            const htmlCode = document.getElementById('html-code').value;
+            const visualPreview = document.getElementById('visual-preview');
+            visualPreview.innerHTML = htmlCode;
+            
+            const semanticTags = visualPreview.querySelectorAll('div, a, p, span, h1, h2, h3, h4, h5, h6, ul, ol, li, table, tr, td, th');
+            semanticTags.forEach(tag => {
+                tag.style.border = `1px solid ${getRandomColor()}`;
+            });
+            
+            Prism.highlightAll();
+        }
+        
+        function toggleBackground(color) {
+            const visualPreview = document.getElementById('visual-preview');
+            visualPreview.style.backgroundColor = color;
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./css/main.css" />
+        <link rel="stylesheet" href="./css/header.css" />
+        <link
+          href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css"
+          rel="stylesheet"
+        />
+    
+    
+     
+        <style>
+          /* FONTS */
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Lexend&display=swap');
+    
+        </style>
+      </head>
+</head>
+<style>
+
+    /* Buttons */
+
+    :root {
+  --color-red: #e2e1dd;
+  --color-purple: #7a18ec;
+  --color-white: #000000;
+  --color-black-1: #111;
+  --color-black-2: #222;
+  --color-black-3: #444;
+  --speed-normal: 0.5s;
+  --speed-fast: 0.8s;
+}
+
+    .button1 {
+        font-family: 'Poppins', sans-serif;
+  position: relative;
+  width: 180px;
+  height: 60px;
+  margin: 20px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--color-white);
+  transition: var(--speed-normal);
+  border: 1px solid var(--color-red);
+}
+
+.button1:hover {
+    border: 1px solid transparent;
+    background: var(--color-red) url(https://i.postimg.cc/wBXGXbWN/pixel.png);
+    transition-delay: 0.8s;
+    background-size: 180px;
+    animation: animate var(--speed-fast) steps(8) forwards;
+  }
+
+  .btn {
+    font-family: 'Poppins', sans-serif;
+  border: 1.5px solid #fff;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: all 0.3s ease-in-out;
+  background-color: #fff;
+  color: #000;
+}
+
+.btn:hover {
+  color: #000;
+  background: #fcf51d;
+  border-color: #fcf51d;
+}
+
+.btn2 {
+    font-family: 'Poppins', sans-serif;
+  border: 1.5px solid #fff;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: all 0.3s ease-in-out;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.btn2:hover {
+    color: #000;
+  background: #fcf51d;
+  border-color: #fcf51d;
+}
+
+
+@keyframes animate {
+  0% {
+    background-position-y: 0;
+  }
+  100% {
+    background-position-y: -480px;
+  }
+}
+    /* CSS styles for visual representation */
+    body {
+        font-family: 'Poppins', sans-serif;
+        color:#fc8b65 ;
+    }
+    
+    .code-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-bottom: -5%;
+    }
+    
+    .code-preview {
+        border: 1px solid #ccc;
+        padding: 20px;
+        max-width: 800px;
+        width: 80%;
+        margin-bottom: 0;
+    }
+    
+    .code-preview pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+    
+    .visual-preview {
+        margin-top: 0px;
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .visual-preview h2 {
+        text-align: center;
+    }
+    
+    .visual-preview pre {
+        background-color: white;
+        padding: 10px;
+        overflow-x: auto;
+    }
+    
+    .visual-preview pre code {
+        display: block;
+        white-space: pre;
+    }
+
+    textarea{
+        background-color: #2c2c32;
+        color: white;
+        width: 100%;
+  
+    }
+
+ 
+    
+    /* Insert random border color around semantic tags and div elements */
+    .visual-preview pre code div,
+    .visual-preview pre code a,
+    .visual-preview pre code p,
+    .visual-preview pre code span,
+    .visual-preview pre code h1,
+    .visual-preview pre code h2,
+    .visual-preview pre code h3,
+    .visual-preview pre code h4,
+    .visual-preview pre code h5,
+    .visual-preview pre code h6,
+    .visual-preview pre code ul,
+    .visual-preview pre code ol,
+    .visual-preview pre code li,
+    .visual-preview pre code table,
+    .visual-preview pre code tr,
+    .visual-preview pre code td,
+    .visual-preview pre code th {
+        border: 1px solid;
+        padding: 5px;
+    }
+
+
+    #logotitle{
+      
+    position: fixed;
+    top: 2%;
+  left: 1%;
+  }
+
+
+  @media screen and (max-width: 800px) {
+
+
+#logotitle{
+    display: none;
+}
+  }
+</style>
+
+<body>
+
+    <a href="index.html"><h2 id="logotitle">Home</h2></a>
+    
+    <div class="code-container">
+        <div class="code-preview">
+            <h2>Paste HTML</h2>
+            <textarea id="html-code" rows="10"></textarea>
+            <button class="button1" onclick="visualizeHTML()">Visualize</button>
+            <button class="btn" onclick="toggleBackground('white')">White Background</button>
+            <button class="btn2" onclick="toggleBackground('black')">Black Background</button>
+        </div>
+    </div>
+    <div class="visual-preview">
+        <h2>Visual Preview:</h2>
+        <pre><code id="visual-preview"></code></pre>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+EXAMPLE 1
+     <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav> 
+
+EXAMPLE 2
+
+<style>
+  .btn {
+    border: none;
+    background-color: inherit;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Green */
+.success {
+    color: green;
+}
+
+.success:hover {
+    background-color: #04AA6D;
+    color: white;
+}
+
+/* Blue */
+.info {
+    color: dodgerblue;
+}
+
+.info:hover {
+    background: #2196F3;
+    color: white;
+}
+
+/* Orange */
+.warning {
+    color: orange;
+}
+
+.warning:hover {
+    background: #ff9800;
+    color: white;
+}
+
+/* Red */
+.danger {
+    color: red;
+}
+
+.danger:hover {
+    background: #f44336;
+    color: white;
+}
+
+/* Gray */
+.default {
+    color: black;
+}
+
+.default:hover {
+    background: #e7e7e7;
+}
+</style>
+
+      <button class="btn success">Success</button>
+<button class="btn info">Info</button>
+<button class="btn warning">Warning</button>
+<button class="btn danger">Danger</button>
+<button class="btn default">Default</button> 
